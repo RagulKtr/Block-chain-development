@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain-Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-AiPY61+5JptzK/U+3VLZOZEfL+yMsK6T6AZumK2Ok9iM3pLxoa+BrFq2T5ZBDZbw" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TjSM3JF0fL+U5n4T/1TdaJzI6i8GX7z6h9KAcXwhKg2Rm86bPJSkaf5/PQVny2W7" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="Blockchain.css">
+    <style>
+        /* Navbar button styles */
+    
+        .dropdown-toggle::after {
+          border-top-color: green;
+        }
+    
+      
+      </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+    style="background-color: white; height: auto; box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.05); margin-bottom: 1px !important;">
+    <div class="container">
+        <a class="navbar-brand" href="#" style="padding: 0;">
+            <img src="./Block-chain-Images/Logo.png" alt="Logo" class="nav-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="border: none;"></span>
+        </button>
+  
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <a class="navbar-brand" href="#" style="padding: 0;">
+                    <img src="./Block-chain-Images/Logo.png" alt="Logo" class="nav-logo-sidebar">
+                </a>
+                <span class="cancel-icon" onclick="closeSidebar()">&times;</span>
+            </div>
+            <ul class="navbar-nav" id="nav-sidebar-ul">
+                <li class="nav-item">
+                    <a class="nav-link d-flex justify-content-between align-items-center" id="nav-a" href="#"
+                        onclick="toggleDropdown('about')">About <i id="about-icon"
+                            class="fas bi-chevron-down about-icon"></i></a>
+                    <div id="about-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdownAbout"
+                        style="display: none;">
+                        <a class="dropdown-item" href="#">JustLogix</a>
+                        <a class="dropdown-item" href="#">Skein Technologies</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <hr class="footer-line" style="margin-top: 0px !important;">
+                <li class="nav-item" style="margin-top: -20px !important;">
+                    <a class="nav-link d-flex justify-content-between align-items-center" id="nav-a" href="#"
+                        onclick="toggleDropdown('services')">Services <i id="services-icon"
+                            class="fas bi-chevron-down"></i></a>
+                    <div id="services-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdownServices"
+                        style="display: none;">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <hr class="footer-line" style="margin-top: 0px !important;">
+                <li class="nav-item" style="margin-top: -20px !important;">
+                    <a class="nav-link d-flex justify-content-between align-items-center" id="nav-a" href="#"
+                        onclick="toggleDropdown('Technologies')">Technologies <i id="Technologies-icon"
+                            class="fas bi-chevron-down"></i></a>
+  
+                    <div id="Technologies-dropdown" class="dropdown-menu"
+                        aria-labelledby="navbarDropdownTechnologies" style="display: none;">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <hr class="footer-line" style="margin-top: 0px !important;">
+  
+                <li class="nav-item" style="margin-top: -20px !important;">
+                    <a class="nav-link d-flex justify-content-between align-items-center" id="nav-a" href="#"
+                        onclick="toggleDropdown('Industries')">Industries <i id="Industries-icon"
+                            class="fas bi-chevron-down"></i></a>
+                    <div id="Industries-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdownIndustries"
+                        style="display: none;">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <hr class="footer-line" style="margin-top: 0px !important;">
+  
+                <li class="nav-item" style="margin-top: -20px !important;">
+                    <a class="nav-link d-flex justify-content-between align-items-center" id="nav-a" href="#"
+                        onclick="toggleDropdown('Portfolios')">Portfolios
+                        <!-- <i id="services-icon"
+                            class="fas bi-chevron-down"></i> -->
+                    </a>
+                    <!-- <div id="Portfolios-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdownPortfolios"
+                        style="display: none;">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div> -->
+                </li>
+                <hr class="footer-line" style="margin-top: 0px !important;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" class="navbar-button">Get in
+                            Touch</button></a>
+                </li>
+  
+            </ul>
+        </div>
+  
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto"
+                style="font-weight: 400; font-family: 'Source Sans Pro', sans-serif; gap: 10px !important;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSolutions" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownSolutions">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSolutions" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownSolutions">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownIndustries" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownIndustries">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTechnologies" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Industries</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownTechnologies">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technologies</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" style="margin-top: 1px !important; color: #676968 !important;">
+                    <a class="nav-link dropdown-togglee" href="#" id="navbarDropdownPortfolio" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="../Webapp/webapp.html">WebApp</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="#">Management</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Product</a>
+                    </div> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" class="navbar_button">Get in
+                            Touch</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+  
+  <script>
+    // Function to open sidebar 
+    function openSidebar() {
+        document.querySelector('.sidebar').classList.add('active');
+        document.querySelector('body').classList.add('sidebar-open');
+    }
+  
+    // Function to close sidebar
+    function closeSidebar() {
+        document.querySelector('.sidebar').classList.remove('active');
+        document.querySelector('body').classList.remove('sidebar-open');
+    }
+  
+    function toggleDropdown(dropdownId) {
+        var dropdown = document.getElementById(dropdownId + '-dropdown');
+        var icon = document.getElementById(dropdownId + '-icon');
+  
+        // Close all dropdowns except the one being opened
+        var dropdowns = document.querySelectorAll('.dropdown-menu');
+        dropdowns.forEach(function (d) {
+            if (d.id !== dropdownId + '-dropdown' && d.style.display === 'block') {
+                d.style.display = 'none';
+                var associatedIcon = document.getElementById(d.id.replace('-dropdown', '-icon'));
+                associatedIcon.classList.remove('bi-chevron-up');
+                associatedIcon.classList.add('bi-chevron-down');
+            }
+        });
+  
+        // Toggle the display and icon class of the current dropdown
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+            icon.classList.remove('bi-chevron-up');
+            icon.classList.add('bi-chevron-down');
+        } else {
+            dropdown.style.display = 'block';
+            icon.classList.remove('bi-chevron-down');
+            icon.classList.add('bi-chevron-up');
+        }
+    }
+  
+  
+    // Toggle sidebar on navbar toggler click
+    document.querySelector('.navbar-toggler').addEventListener('click', function () {
+        if (document.querySelector('.sidebar').classList.contains('active')) {
+            closeSidebar(); // Close sidebar if already open
+        } else {
+            openSidebar(); // Open sidebar if closed
+        }
+    });
+  </script>
+<!--section 1======================================================================-->
+<div class="container">
+    <div class="Blockchain-Development-services-maindiv">
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="Blockchain-Development-services-header-col1">
+            <div class="Blockchain-Development-header">
+            <h1>Blockchain Development Services</h1>
+            </div>
+            <div class="Blockchain-Development-content">
+            <p class="Blockchain-cutting-edge">"Leverage cutting-edge technology and expert consultancy to drive your business forward in the digital age."</p>
+            <p class="Blockchain-develop-scalable">Develop a scalable, dynamic, and feature-rich application with our Angular js development company. Our skilled experts are proficient in providing engaging and effective Angular development services with a proven record of success.</p>
+            </div>
+            <button type="button" class="Blockchain-discoverservices">Discover Our Service</button>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center ">
+            <img src="./Block-chain-Images/Blockchain development services.png" class="img-fluid" alt="Responsive Image">
+            
+        </div>
+    </div>
+</div>
+</div>
+
+<!--section 2=====================================================================-->
+<div class="Services-We-Offer-bgcolor">
+<div class="container">
+    <div class="Services-We-Offer-maindiv">
+    <h1 class="Services-We-Offer-header">Blockchain Development <span>Services We Offer <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+    <div class="row Services-We-Offer-cards1 ">
+        <div class="col-12 col-sm-6 col-md-3 mb-4 ">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/Blockchain Consulting icon.png" class="img-fluid" alt="Blockchain Consulting">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">Blockchain Consulting</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/dApps Development icon.png" class="img-fluid"  alt="dApps Development">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">dApps Development</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/Cross-chain bridges icon.png" class="img-fluid" alt="Cross-chain bridges">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">Cross-chain bridges</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/Smart Contract icon.png" class="img-fluid" alt="Smart Contract">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">Smart Contract</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+    </div>
+    <div class="row Services-We-Offer-cards2">
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/DeFi Development icon.png" class="img-fluid" alt="DeFi Development">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">DeFi Development</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/Cryptocurrency Wallet icon.png" class="img-fluid"  alt="Cryptocurrency Wallet">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">Cryptocurrency Wallet</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/NFT Marketplace icon.png" class="img-fluid" alt="NFT Marketplace">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">NFT Marketplace</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="Services-We-Offer-border">
+            <div class="center-image">
+                <img src="./Block-chain-Images/Supply Chain icon.png" class="img-fluid" alt="Supply Chain icon">
+            </div>
+            <h2 class="text-center Services-We-Offer-heading">Supply Chain</h2>
+            <p class="text-left Services-We-Offer-paragrapgh">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi</p>
+            </div>
+        </div>
+    </div>
+    <div class="center-button">
+        <button class="Services-We-Offer-button">Explore More <i class="bi bi-arrow-right"></i></button>
+    </div>
+    </div>
+</div>
+</div>
+
+
+<!--section 3=======================================================================-->
+<div class="container">
+    <div class="Why-Choose-Us-maindiv">
+    <h1 class="Why-Choose-Us-header">Why <span>Choose Us <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <p class="Why-Choose-Us-paragraph">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem!</p>
+            <div class="row Why-Choose-Us-projects ">
+                <div class="col-md-4 col-sm-12 col-6">
+                    <div class="Why-Choose-project-bg">
+                    <h1 >2.4K</h1>
+                    <p>Project done</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-6">
+                    <div class="Why-Choose-project-bg">
+                    <h1>200+</h1>
+                    <p>Happy Client</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 Why-Choose-Us-projects ">
+                <div class="col-md-4 col-sm-12 col-6">
+                    <div class="Why-Choose-project-bg">
+                    <h1>50%</h1>
+                    <p>Growth over year</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-6">
+                    <div class="Why-Choose-project-bg">
+                    <h1>30+</h1>
+                    <p>Award winning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+            <img src="./Block-chain-Images/Blockchain development.png" class="img-fluid" alt="Blockchain development">
+        </div>
+        <div class="row Why-Choose-Us-mobileprojects ">
+            <div class="col-md-4 col-sm-12 col-6 ">
+                <div class="Why-Choose-project-bg">
+                    <h1>2.4K</h1>
+                    <p>Project done</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-6">
+                <div class="Why-Choose-project-bg">
+                    <h1>200+</h1>
+                    <p>Happy Client</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 Why-Choose-Us-mobileprojects ">
+            <div class="col-md-4 col-sm-12 col-6">
+                <div class="Why-Choose-project-bg">
+                    <h1>50%</h1>
+                    <p>Growth over year</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-6">
+                <div class="Why-Choose-project-bg">
+                    <h1>30+</h1>
+                    <p>Award winning</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!--section 4========================================================================-->
+<div class="container">
+    <div class="Technical-Expertise-maindiv">
+    <h1 class="Technical-Expertise-heading">Leverage the Technical Expertise of <span>Our Developers <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+    <div class="row Technical-Expertise-row " >
+      <div class="col-md-4 d-none d-md-block " >
+        <img src="./Block-chain-Images/Tech expertise.png" alt="Tech expertise" class="img-fluid">
+      </div>
+      <div class="col-md-8 scrollable ">
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+        <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Containerization & Ledgers</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Docker <span></span> Kubernetes <span></span>  ElasticBox <span></span>  EKS / ECR <span></span>  Public Ledger <span></span> Distributed Ledger </p> 
+            </div>
+        </div>
+        <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Cryptocurrencies</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>ECR <span></span> Bitcoin <span></span>  Ripple (XRP) <span></span>  DOGE <span></span>  Tron <span></span> XPR </p>
+            </div>
+        </div>
+        <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Network & Security</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Node <span></span> Ledger <span></span>  Wallet <span></span>  Nonce <span></span>  Hash <span></span> Flutter </p>
+            </div>
+        </div>
+        <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Wallets</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>MyEther Wallet <span></span> MetaMask Wallet <span></span>  Paper wallet <span></span>  Mobile walle </p>
+            </div>
+        </div>
+        <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Transactional Component</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>NFT <span></span> ICO <span></span>  Fungible Token <span></span>  Smart Contract </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+        <h2>Supported Environment</h2>
+        <div class="row">
+            <div class="col-12 Technical-Expertise-subheading">
+                <p>Solidity <span></span> Chaincode <span></span>  Consensus Algorithm <span></span>  dApps <span></span>  Ethereum Virtual Machine </p>
+            </div>
+        </div>
+                <hr style="border: 1px solid #d3d0d0"/>
+      </div>
+
+    </div>
+    <div class="Technical-Expertise-mobile-row">
+        <h1 class="Technical-Expertise-side-heading ">Supported Environment</h1>
+        <div class="row ">
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Solidity</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Chaincode</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Consensus Algorithm</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">dApps</div>
+            <div class="col-auto Technical-Expertise-subheading">Ethereum Virtual Machine</div>
+        </div>
+        <hr style="width: 100%; border: 1px solid #E9E9E9"/>
+        <h1 class=" Technical-Expertise-side-heading ">Containerization & Ledgers</h1>
+        <div class="row ">
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Docker</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Kubernetes</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">ElasticBox</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">EKS / ECR</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Public Ledger</div>
+            <div class="col-auto Technical-Expertise-subheading">Distributed Ledger</div>
+        </div>
+        <hr style="width: 100%; border: 1px solid #E9E9E9"/>
+        <h1 class=" Technical-Expertise-side-heading ">Cryptocurrencies</h1>
+        <div class="row ">
+            <div class="col-auto Technical-Expertise-subheading vertical-line">ECR</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Bitcoin</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Ripple (XRP)</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">DOGE</div>
+            <div class="col-auto Technical-Expertise-subheading">Tron</div>
+        </div>
+        <hr style="width: 100%; border: 1px solid #E9E9E9"/>
+        <h1 class=" Technical-Expertise-side-heading ">Network & Security</h1>
+        <div class="row ">
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Node</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Ledger</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Wallet</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Nonce</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Hash</div>
+            <div class="col-auto Technical-Expertise-subheading">Flutter</div>
+        </div>
+        <hr style="width: 100%; border: 1px solid #E9E9E9"/>
+        <h1 class=" Technical-Expertise-side-heading ">Wallets</h1>
+        <div class="row ">
+            <div class="col-auto Technical-Expertise-subheading vertical-line">MyEther Wallet</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">MetaMask Wallet</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Paper wallet</div>
+            <div class="col-auto Technical-Expertise-subheading">Mobile wallets</div>
+        </div>
+        <hr style="width: 100%; border: 1px solid #E9E9E9"/>
+        <h1 class=" Technical-Expertise-side-heading ">Transactional Component</h1>
+        <div class="row ">
+            <div class="col-auto Technical-Expertise-subheading vertical-line">NFT</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">ICO</div>
+            <div class="col-auto Technical-Expertise-subheading vertical-line">Fungible Token</div>
+            <div class="col-auto Technical-Expertise-subheading">Smart Contract</div>
+        </div>
+        <hr style="width: 100%; border: 1px solid #E9E9E9"/>
+
+    </div>
+    </div>
+</div>
+
+<!--section 5=============================================================================-->
+<div class="background-section mt-4">
+    <img src="./Block-chain-Images/Rectangle 172.png" class="img-fluid Industry-Served-backgroundimg"/>
+    <div class="container">
+        <div class="Industry-Served-maindiv">
+        <h2 class="Industry-Served-heading">Industry <span>Served <img src="./Block-chain-Images/Rectangle 81.png"/></span></h2>
+        <div class="row mt-4">
+            <div class="col-md-6 col-sm-12">
+                <img src="./Block-chain-Images/Mask group.png" style="z-index: 10;position: relative;" class="img-fluid Mask-group" alt="Responsive Image">
+            </div>
+            <div class="col-md-6 col-sm-12 accordion-maincol" style="z-index: 10; padding-bottom: 60px;" >
+                 <!-- Accordion -->
+                 <div class="accordion Industry-Served-accordion" id="accordionExample">
+                    <div class="accordion-item Industry-accordion">
+                        <h2 class="accordion-header accordion-heading" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Retail 
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item Industry-accordion">
+                        <h2 class="accordion-header accordion-heading" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Education 
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item Industry-accordion">
+                        <h2 class="accordion-header accordion-heading" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Healthcare 
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item Industry-accordion">
+                        <h2 class="accordion-header accordion-heading" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                FinTech 
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam..
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item Industry-accordion">
+                        <h2 class="accordion-header accordion-heading" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Logistics 
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Accordion -->
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--section 6 ============================================================================-->
+<div class="container ">
+    <div class="Engagement-Models-webmaindiv">
+    <h1 class="Engagement-Models-heading">Engagement Models <span>We Offer <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+    <div class="Engagement-Models-main-row mt-5">
+    <div class="row mt-4 ">
+        <div class="col-md-3 col-sm-12 right-border">
+            <p>Staff Augmentation</p>
+        </div>
+        <div class="col-md-5 col-sm-12 Engagement-Models-paragrapgh">
+            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasci voluptatem! Sed molestias animi ad quos modi qui. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id.</p>
+        </div>
+        <div class="col-md-4 col-sm-12 ">
+            <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col ">Agile processes</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Transparent pricing</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Monthly billing</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Maximum flexibility</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Suitable for startups, MVPs and software/product companies</p>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="Engagement-Models-main-row mt-4">
+    <div class="row mt-4 ">
+        <div class="col-md-3 col-sm-12 right-border">
+            <p>Dedicated Team</p>
+        </div>
+        <div class="col-md-5 col-sm-12 Engagement-Models-paragrapgh">
+            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasci voluptatem! Sed molestias animi ad quos modi qui. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id.</p>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col ">Agile processes</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Transparent pricing</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Monthly billing</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Maximum flexibility</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Suitable for startups, MVPs and software/product companies</p>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="Engagement-Models-main-row mt-4">
+    <div class="row mt-4 ">
+        <div class="col-md-3 col-sm-12 right-border">
+            <p>Full Process Outsourcing</p>
+        </div>
+        <div class="col-md-5 col-sm-12 Engagement-Models-paragrapgh">
+            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasci voluptatem! Sed molestias animi ad quos modi qui. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id.</p>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col ">Agile processes</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Transparent pricing</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Monthly billing</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Maximum flexibility</p>
+              </div>
+              <div class="row Engagement-Models-cardlist">
+                <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Suitable for startups, MVPs and software/product companies</p>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col Engagement-Models-button">    
+      <button class="btn btn-primary">Discuss More</button>
+    </div>
+  </div>
+</div>
+
+<div class="Engagement-Models-maindiv">         
+    <div class="row ">
+      <div class="col">              
+        <h1 class="text-left Engagement-Models-heading">Engagement Models <span>We Offer <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+      </div>
+    </div>
+  
+    <div class="Engagement-Models-card-layout">  
+    <div class="row  ">
+        
+        
+        <div class="col-md-4">                         
+            <div class="Engagement-Models-innercards">       
+          <h2 class="Engagement-Models-innercardsheading">Staff Augmentation</h2>    
+          <p class="Engagement-Models-innercardsparagraph">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasci voluptatem! Sed molestias animi ad quos modi qui. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id.</p>
+          
+            <div class="row Engagement-Models-cardlist">
+              <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Agile processes</p>
+            </div>
+            <div class="row Engagement-Models-cardlist">
+              <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Transparent pricing</p>
+            </div>
+            <div class="row Engagement-Models-cardlist">
+              <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Monthly billing</p>
+            </div>
+            <div class="row Engagement-Models-cardlist">
+              <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Maximum flexibility</p>
+            </div>
+            <div class="row Engagement-Models-cardlist">
+              <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Suitable for startups, MVPs and software/product companies</p>
+            </div>
+           
+              
+        </div>
+        </div>
+                                          
+        <div class="col-md-4">      
+            <div class="Engagement-Models-innercards">
+          <h2 class="Engagement-Models-innercardsheading">Dedicated Team</h2>
+          <p class="Engagement-Models-innercardsparagraph">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasci voluptatem! Sed molestias animi ad quos modi qui. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id.</p>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col ">Agile processes</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Transparent pricing</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Monthly billing</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Maximum flexibility</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Suitable for startups, MVPs and software/product companies</p>
+          </div>
+        </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="Engagement-Models-innercards">
+          <h2 class="Engagement-Models-innercardsheading">Full Process Outsourcing</h2>
+          <p class="Engagement-Models-innercardsparagraph">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasci voluptatem! Sed molestias animi ad quos modi qui. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quisni porro id.</p>
+          
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Agile processes</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Transparent pricing</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Monthly billing</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Maximum flexibility</p>
+          </div>
+          <div class="row Engagement-Models-cardlist">
+            <div class="col-1"><i class="bi bi-check-circle-fill custom-check-circle"></i></div> <p class="col">Suitable for startups, MVPs and software/product companies</p>
+          </div>
+        </div>
+        </div>
+      </div>
+  
+    <div class="row mt-5">
+      <div class="col Engagement-Models-button">    
+        <button class="btn btn-primary">Discuss More</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!---section 7-------------------------------------------------------------------------->
+<div class="Emerging-Technologies-bgcolor">
+<div class="container">
+    <div class="Emerging-Technologies-maindiv">
+    <div class="row">
+      <div class="col-md Emerging-Technologies-header">
+        <h2>Emerging <span>Technologies <img src="./Block-chain-Images/Rectangle 81.png"/></span></h2>
+        <p>At JustLogix, we specialize in providing cutting-edge IT solutions across a multitude of industries, fostering innovation, growth, and digital transformation worldwide.</p>
+      </div>
+      <div class="col-md-7">
+        <div id="carouselExampleIndicators" class="carousel slide"  data-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active Big-Data-Analytics-padding">
+              <!-- Second row with two columns -->
+              <div class="row Emerging-Technologies-innerrow">
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Big Data Analytics</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Data Science</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Block Chain</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Intelligent automation</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+              </div>
+              <div class="row Emerging-Technologies-innerrow1">
+                <div class="col Big-Data-Analytics-border">
+                  <h2>Big Data Analytics</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item Big-Data-Analytics-padding">
+              <!-- Second row with two columns -->
+              <div class="row Emerging-Technologies-innerrow">
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Big Data Analytics</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Data Science</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Block Chain</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Intelligent automation</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+              </div>
+              <div class="row Emerging-Technologies-innerrow1">
+                <div class="col Big-Data-Analytics-border">
+                  <h2>Big Data Analytics</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item Big-Data-Analytics-padding">
+              <!-- Second row with two columns -->
+              <div class="row Emerging-Technologies-innerrow">
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Big Data Analytics</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Data Science</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Block Chain</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+                <div class="col-md-6 Big-Data-Analytics-border">
+                  <h2>Intelligent automation</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+              </div>
+              <div class="row Emerging-Technologies-innerrow1">
+                <div class="col Big-Data-Analytics-border">
+                  <h2>Big Data Analytics</h2>
+                  <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quisni porro id suscipit quam qui excepturi dolor ut quasini voluptatem! Sed molestias animi ad quos modi qui</p>
+                  <a href="#" style="text-decoration: none;">Read More <span><i class="bi bi-arrow-right"  ></i></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev"   href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+            <span class="sr-only" >Previous</span>
+          </button>
+          <button class="carousel-control-next " href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--section 8=======================================================================-->
+
+<div class="container">
+    <div class="Our-casestudies-maindiv">
+        <div class="row">
+            <div class="col">
+                <h1 class="Our-casestudies-heading">Our <span>Case Studies <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+            </div>
+        </div>
+        <h2 class="Our-casestudies-mobileheading">Management Software Solution for small to mid-sized accounting firms.</h2>
+        <div id="caseStudiesCarousel" class="carousel slide" data-ride="carousel" data-bs-touch="true" data-bs-interval="2000">
+            <div class="carousel-inner">
+                <div class="carousel-item Our-casestudies-items active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./Block-chain-Images/Management Software Solution.png" class="img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="col-md-6 Our-casestudies-Software-Solution">
+                            <h2>Management Software Solution for small to mid-sized accounting firms.</h2>
+                            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum Lorem ipsum dolor sit amet. </p>
+                            <p>Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! </p>
+                            <button class="Our-casestudies-button">Learn More <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item Our-casestudies-items">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./Block-chain-Images/Management Software Solution.png" class="img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="col-md-6 Our-casestudies-Software-Solution">
+                            <h2>Management Software Solution for small to mid-sized accounting firms.</h2>
+                            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum Lorem ipsum dolor sit amet. </p>
+                            <p>Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! </p>
+                            <button class="Our-casestudies-button">Learn More <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item Our-casestudies-items">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./Block-chain-Images/Management Software Solution.png" class="img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="col-md-6 Our-casestudies-Software-Solution">
+                            <h2>Management Software Solution for small to mid-sized accounting firms.</h2>
+                            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum Lorem ipsum dolor sit amet. </p>
+                            <p>Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! </p>
+                            <button class="Our-casestudies-button">Learn More <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item Our-casestudies-items">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./Block-chain-Images/Management Software Solution.png" class="img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="col-md-6 Our-casestudies-Software-Solution">
+                            <h2>Management Software Solution for small to mid-sized accounting firms.</h2>
+                            <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum Lorem ipsum dolor sit amet. </p>
+                            <p>Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! </p>
+                            <button class="Our-casestudies-button">Learn More <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators Our-casestudies-indicator">
+                <li data-target="#caseStudiesCarousel" data-slide-to="0" class="active dot-indicator"></li>
+                <li data-target="#caseStudiesCarousel" data-slide-to="1" class=" dot-indicator"></li>
+                <li data-target="#caseStudiesCarousel" data-slide-to="2" class=" dot-indicator"></li>
+                <li data-target="#caseStudiesCarousel" data-slide-to="3" class=" dot-indicator"></li>
+                <!-- Add more indicators corresponding to the number of items -->
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<!--section 9====================================================================-->
+
+<div class="our-testimonial-background">
+    <div class="container">
+        <div class="our-testimonial-maindiv">
+            <h1 class="our-testimonial-heading">Our <span>Testimonials <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+            <div class="our-testimonial-outerborder">
+                <div id="testimonialCarousel" class="carousel slide our-testimonial-inner" data-ride="carousel" data-bs-touch="true" data-bs-interval="2000">
+                    <div class="carousel-indicators row carousel-indicators-row ">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active dot-indicator" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="dot-indicator" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="dot-indicator" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" class="dot-indicator" aria-label="Slide 4"></button>
+                      </div>
+                    <div class="carousel-inner">
+                        <!-- First Slide -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <img src="./Block-chain-Images/Group 68.png" class="img-fluid our-testimonial-startimage" alt="Testimonial Image">
+                                </div>
+                            </div>
+                            <div class="our-testimonial-paragrapgh ">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non.</p>
+                                
+                            </div>
+                            <div class="our-testimonial-paragrapgh-mobile">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non </p>
+                            </div>
+                            <div class="row " style="margin-bottom: 25px;">
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <img src="./Block-chain-Images/profile testimonials.png" class="img-fluid mizara-profile" alt="Profile Image">
+                                    <p class="Mizara-Mona ">Mizara Mona <br/><span>Project manager</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <img src="./Block-chain-Images/Group 68.png" class="img-fluid our-testimonial-startimage" alt="Testimonial Image">
+                                </div>
+                            </div>
+                            <div class="our-testimonial-paragrapgh">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non.</p>
+                            </div>
+                            <div class="our-testimonial-paragrapgh-mobile">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non </p>
+                            </div>
+                            <div class="row " style="margin-bottom: 25px;">
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <img src="./Block-chain-Images/profile testimonials.png" class="img-fluid mizara-profile" alt="Profile Image">
+                                    <p class="Mizara-Mona ">Mizara Mona <br/><span>Project manager</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="row">
+                                <div class="col-12">
+                                    <img src="./Block-chain-Images/Group 68.png" class="img-fluid our-testimonial-startimage" alt="Testimonial Image">
+                                </div>
+                            </div>
+                            <div class="our-testimonial-paragrapgh ">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non.</p>
+                            </div>
+                            <div class="our-testimonial-paragrapgh-mobile">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non </p>
+                            </div>
+                            <div class="row " style="margin-bottom: 25px;">
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <img src="./Block-chain-Images/profile testimonials.png" class="img-fluid mizara-profile" alt="Profile Image">
+                                    <p class="Mizara-Mona ">Mizara Mona <br/><span>Project manager</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <img src="./Block-chain-Images/Group 68.png" class="img-fluid our-testimonial-startimage" alt="Testimonial Image">
+                                </div>
+                            </div>
+                            <div class="our-testimonial-paragrapgh ">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non.</p>
+                            </div>
+                            <div class="our-testimonial-paragrapgh-mobile">
+                                <p>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non </p>
+                            </div>
+                            <div class="row" style="margin-bottom: 25px;"> 
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <img src="./Block-chain-Images/profile testimonials.png" class="img-fluid mizara-profile" alt="Profile Image">
+                                    <p class="Mizara-Mona ">Mizara Mona <br/><span>Project manager</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Section - 10 News & Blogs  -->
+
+<div class="container">
+    <div class="News-blogs-maindiv">
+    <h1 class="News-blogs-heading">News and <span>Blogs <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+    <div class="row" style="display: flex;flex-direction: row;align-items: center;justify-content: center;">
+        <div class="col-md-4 mb-4 News-blogs-cards" >
+            <div style="background: #FFFFFF;box-shadow: 0px 0px 3px 0px #00000040;border-radius: 20px;">
+            <img src="./Block-chain-Images/Online Healthcare Shopping.png" style="width: 100%;" class="img-fluid" alt="Image 1">
+            <div class="row mt-3 News-blogs-inner-row ">
+                <div class="col-auto">
+                    <img src="./Block-chain-Images/profile 3.png" class="img-fluid News-blogs-clientimg" alt="Image 2">
+                </div>
+                <div class="col-auto">
+                    <h6>Kingston Prince</h6>
+                </div>
+                <div class="col-auto">
+                    <p>Jan 19,2023</p>
+                </div>
+            </div>
+            <div class="News-blogs-content">
+            <h4>Online Healthcare Shopping</h4>
+            <h5>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quis porro id suscipit quam.</h5>
+            <a href="#">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 News-blogs-cards">
+            <div style="background: #FFFFFF;box-shadow: 0px 0px 3px 0px #00000040;border-radius: 20px;">
+            <img src="./Block-chain-Images/ChatBot Integration for Live Projects.png" style="width: 100%;" class="img-fluid" alt="Image 3">
+            <div class="row mt-3 News-blogs-inner-row">
+                <div class="col-auto">
+                    <img src="./Block-chain-Images/profile 3.png" class="img-fluid News-blogs-clientimg" alt="Image 4">
+                </div>
+                <div class="col-auto">
+                    <h6>Kingston Prince</h6>
+                </div>
+                <div class="col-auto">
+                    <p>Jan 19,2023</p>
+                </div>
+                
+            </div>
+            <div class="News-blogs-content">
+            <h4>ChatBot Integration for Live Projects</h4>
+            <h5>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quis porro id suscipit quam.</h5>
+            <a href="#">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 News-blogs-cards">
+            <div style="background: #FFFFFF;box-shadow: 0px 0px 3px 0px #00000040;border-radius: 20px;">
+            <img src="./Block-chain-Images/The Future of Cross-Chain Swaps.png" style="width: 100%;" class="img-fluid" alt="Image 5">
+            <div class="row mt-3 News-blogs-inner-row">
+                <div class="col-auto">
+                    <img src="./Block-chain-Images/profile 3.png" class="img-fluid News-blogs-clientimg" alt="Image 6">
+                </div>
+                <div class="col-auto">
+                    <h6>Kingston Prince</h6>
+                </div>
+                <div class="col-auto">
+                    <p>Jan 19,2023</p>
+                </div>
+            </div>
+            <div class="News-blogs-content">
+            <h4>The Future of Cross-Chain Swaps</h4>
+            <h5>Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissi mos sed modi nihil aut Quis porro id suscipit quam.</h5>
+            <a href="#">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<!--section 11-->
+<div class="container">
+    <div class="section13layout">
+        <div class="section13header">
+            
+                <h1 class="section13heading">Frequently Asked <span>Questions <img src="./Block-chain-Images/Rectangle 81.png"/></span></h1>
+            
+            </div>
+            <div class="container">
+            <div class="accordion FAQ-accordion">
+              <div class="accordion-item FAQ-accordion-item ">
+                <div class="accordion-header FAQ-accordion-header">
+                  <span>Can’t find any answer for your question?</span>
+                   <button class="accordion-toggle"><i class="arrow down"></i></button>
+              </div>
+                  <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+              </div>
+              <div class="accordion-item FAQ-accordion-item">
+                <div class="accordion-header FAQ-accordion-header">
+                  <span>Can’t find any answer for your question?</span>
+                   <button class="accordion-toggle"><i class="arrow down"></i></button>
+              </div>
+                  <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+              </div>
+              <div class="accordion-item FAQ-accordion-item">
+                <div class="accordion-header FAQ-accordion-header">
+                  <span>Can’t find any answer for your question?</span>
+                   <button class="accordion-toggle"><i class="arrow down"></i></button>
+              </div>
+                <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+            </div>
+            <div class="accordion-item FAQ-accordion-item">
+              <div class="accordion-header FAQ-accordion-header">
+                <span>Can’t find any answer for your question?</span>
+                 <button class="accordion-toggle"><i class="arrow down"></i></button>
+            </div>
+              <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+          </div>
+          <div class="accordion-item FAQ-accordion-item">
+            <div class="accordion-header FAQ-accordion-header">
+              <span>Can’t find any answer for your question?</span>
+               <button class="accordion-toggle"><i class="arrow down"></i></button>
+          </div>
+            <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+        </div>
+        <div class="accordion-item FAQ-accordion-item">
+          <div class="accordion-header FAQ-accordion-header">
+            <span>Can’t find any answer for your question?</span>
+             <button class="accordion-toggle"><i class="arrow down"></i></button>
+        </div>
+          <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+      </div>
+      <div class="accordion-item FAQ-accordion-item">
+        <div class="accordion-header FAQ-accordion-header">
+          <span>Can’t find any answer for your question?</span>
+           <button class="accordion-toggle"><i class="arrow down"></i></button>
+      </div>
+        <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+    </div>
+          </div>
+        </div>
+  </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+let currentOpenAccordion = null;
+
+accordionHeaders.forEach(header => {
+    header.addEventListener('click', function () {
+        const accordionItem = this.parentElement;
+        const accordionContent = accordionItem.querySelector('.accordion-content');
+        const accordionToggle = accordionItem.querySelector('.accordion-toggle').querySelector('.arrow');
+
+        // If there's an open accordion and it's not the current one, close it
+        if (currentOpenAccordion && currentOpenAccordion !== accordionItem) {
+            const openContent = currentOpenAccordion.querySelector('.accordion-content');
+            const openToggle = currentOpenAccordion.querySelector('.accordion-toggle .arrow');
+
+            openContent.style.display = 'none';
+            openToggle.classList.remove('up');
+            openToggle.classList.add('down');
+
+            // Remove active class and reset styles for the previously open accordion header
+            currentOpenAccordion.querySelector('.accordion-header').classList.remove('active');
+            openToggle.classList.remove('white');
+            currentOpenAccordion.querySelector('.accordion-header').classList.remove('white');
+        }
+
+        // Toggle the current accordion content and arrow
+        if (accordionContent.style.display === 'block') {
+            accordionContent.style.display = 'none';
+            accordionToggle.classList.remove('up');
+            accordionToggle.classList.add('down');
+            this.classList.remove('active');
+            accordionToggle.classList.remove('white');
+            this.classList.remove('white');
+
+            currentOpenAccordion = null;
+        } else {
+            accordionContent.style.display = 'block';
+            accordionToggle.classList.remove('down');
+            accordionToggle.classList.add('up');
+            this.classList.add('active');
+            accordionToggle.classList.add('white');
+            this.classList.add('white');
+
+            currentOpenAccordion = accordionItem;
+        }
+    });
+});
+});
+
+</script>
+
+<!--section 12 form =======================-->
+<div class="form-background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="form-head">Get in <span class="form-touch">Touch</span></h5>
+                <h5 class="form-top">Want to start a project with us?</h5>
+                <p class="form-paragraph">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos
+                    sed modi
+                    nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed mol stias
+                    animi ad quos
+                    modi qui libero laborum ab omnis magnam.</p>
+                <ul class="custom-list">
+                    <li class="form-point">Sed mol stias animi ad quos modi qui libero </li>
+                    <li class="form-point">Quis porro id suscipit quam qui excepturi </li>
+                    <li class="form-point">Lorem ipsum dolor sit amet. Non commodi aliquam </li>
+                </ul>
+                <!-- <div class="row profile-name-row align-items-center">
+                    <div class="col-md-auto image">
+                        <img src="../About/aboutImages/p1.png" class="formprofile" alt="formprofile">
+                    </div>
+                    <div class="col-md-9 profile-name-column">
+                        <div class="row">
+                            <div class="col profilename">
+                                <p>Kingston Prince</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 profiletext">
+                                <p>Sales Lead</p>
+                            </div>
+                            <div class="col-4 profiletext2">
+                                <p>sales@justlogix.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-md-6 form-content2 d-flex justify-content-center align-items-center">
+                <img src="./Block-chain-Images/Ellipse 32.png" class="circleimage">
+                <div class="form-container">
+                    <h3 class="form-text">Send Your <span class="form-touch">Idea's</span></h3>
+                    <div class="form-line"></div>
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="firstname">First Name<span class="form-star">*</span></label>
+                                <input id="firstname" type="text" class="form-control" name="first name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastname">Last Name<span class="form-star">*</span></label>
+                                <input id="lastname" type="text" class="form-control" name="last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email<span class="form-star">*</span></label>
+                            <input id="email" type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" name="message"
+                                style="height: 100px;"></textarea>
+                        </div>
+                        <button type="submit" class="form-button">Start Your Project</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <img src="../About/aboutImages/dot.png" class="dotimage"> -->
+        <img src="./Block-chain-Images/scribble 1.png" class="arrowimage">
+    </div>
+  </div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row footer-columns justify-content-between">
+            <div id="footer-column" class="col-md-2 footer-column footer-about">
+                <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                    About<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                </h3>
+                <ul id="footer-menu" class="footer-menu">
+                    <li>Who We Are</li>
+                    <li>Career</li>
+                    <li>How We Work</li>
+                    <li>Blogs</li>
+                    <li>Get in Touch</li>
+                </ul>
+                <hr class="footer-line">
+            </div>
+            <div id="footer-column" class="col-md-2 footer-column footer-services">
+                <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                    Services<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                </h3>
+                <ul id="footer-menu" class="footer-menu">
+                    <li>Web App Development</li>
+                    <li>Mobile App Development</li>
+                    <li>Software Development</li>
+                    <li>Support & Maintenance</li>
+                    <li>QA Testing</li>
+                    <li>DevOps</li>
+                    <li>Blog</li>
+                    <li>Cloud Services</li>
+                </ul>
+                <hr class="footer-line">
+            </div>
+            <div id="footer-column" class="col-md-2 footer-column footer-technologies">
+                <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                    Technologies<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                </h3>
+                <ul id="footer-menu" class="footer-menu">
+                    <li>Blockchain</li>
+                    <li>Artificial Intelligence</li>
+                    <li>AR & VR</li>
+                    <li>Cloud Computing</li>
+                    <li>Internet of Things</li>
+                    <li>more...</li>
+                </ul>
+                <hr class="footer-line">
+            </div>
+            <div id="footer-column" class="col-md-2 footer-column footer-industries">
+                <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                    Industries<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                </h3>
+                <ul id="footer-menu" class="footer-menu">
+                    <li>FinTech</li>
+                    <li>Banking</li>
+                    <li>Retail</li>
+                    <li>Manufacturing</li>
+                    <li>Insurance</li>
+                    <li>Real Estate</li>
+                    <li>Travel & Tourism</li>
+                    <li>Education</li>
+                </ul>
+                <hr class="footer-line">
+            </div>
+            <div id="footer-column" class="col-md-2 footer-column footer-portfolios">
+                <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                    Portfolios<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                </h3>
+                <ul id="footer-menu" class="footer-menu">
+                    <li>Kid's World</li>
+                    <li>Resto</li>
+                </ul>
+                <hr class="footer-line">
+            </div>
+        </div>
+    </div>
+    <hr class="footer-border">
+    <div class="container">
+        <div class="row justify-content-between footer-bottom-content">
+            <div class="col-md-auto">
+                <p class="mb-0 footer-text1">Privacy Policy | Terms & Conditions | Sitemap</p>
+            </div>
+            <div class="col-md-auto">
+                <p class="footer-text2"><span class="copysymbol">&copy;</span><span class="copysymbol_text">2024 All
+                        Rights
+                        Reserved - justlogix.com</span></p>
+            </div>
+            <div class="col-md-auto  d-flex justify-content-center">
+                <div class="footer-text3">
+                    <a href="#" class="btn btn-link icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="btn btn-link icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn btn-link icon"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="btn btn-link icon"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  </footer>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Get all footer columns
+    var footerColumns = document.querySelectorAll('.footer-column');
+    var currentOpenMenu = null;
+
+    // Loop through each footer column
+    footerColumns.forEach(function (column) {
+        // Find the h3 element
+        var h3 = column.querySelector('h3');
+
+        // Find the ul element
+        var menu = column.querySelector('ul');
+
+        // Add click event listener to the icon
+        h3.addEventListener('click', function () {
+            // If there's an open menu and it's not the current one, close it
+            if (currentOpenMenu && currentOpenMenu !== menu) {
+                currentOpenMenu.classList.remove('active');
+                currentOpenMenu.previousElementSibling.querySelector('i').classList.add('bi-chevron-down');
+                currentOpenMenu.previousElementSibling.querySelector('i').classList.remove('bi-chevron-up');
+            }
+
+            // Toggle the active class on the menu when the icon is clicked
+            menu.classList.toggle('active');
+
+            // Toggle the icon between chevron-down and chevron-up
+            h3.querySelector('i').classList.toggle('bi-chevron-down');
+            h3.querySelector('i').classList.toggle('bi-chevron-up');
+
+            // Update the current open menu
+            currentOpenMenu = menu.classList.contains('active') ? menu : null;
+        });
+    });
+});
+
+</script>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
