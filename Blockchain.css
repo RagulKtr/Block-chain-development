@@ -1,90 +1,106 @@
 .navbar_button {
-    border-radius: 8px;
-    background: linear-gradient(90deg, #23899C 13.04%, #2CA068 91.03%);
-    color: #fff;
-    border-radius: 7px;
-    font-weight: 700;
-    border: none !important;
-    font-size: 16px;
-  }
-  .navbar-button{
-    border-radius: 8px;
-    background: linear-gradient(90deg, #23899C 13.04%, #2CA068 91.03%);
-    color: #fff;
-    border-radius: 7px;
-    font-weight: 700;
-    border: none !important;
-    font-size: 16px;
-    width: 100% !important;
-    height: 34px !important;
-  
-  }
-  
-  /* Navbar logo styles */
-  .nav-logo {
-    width: 210px !important;
-    height: 34px !important;
-  }
-  
-  /* Sidebar styles */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -950px;
-    width: 250px;
-    height: 100%;
-    background-color: #fff;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
-    padding-top: 50px;
-  }
-  
-  .sidebar.active {
-    left: 0;
-  }
-  #navbarDropdownSolutions,#navbarDropdownIndustries,
-  #navbarDropdownTechnologies,#navbarDropdownPortfolio{
-  color:#676968;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #23899C 13.04%, #2CA068 91.03%);
+  color: #fff;
+  border-radius: 7px;
+  font-weight: 700;
+  border: none !important;
+  font-size: 16px;
+}
+
+.navbar-button {
+  border-radius: 12px;
+  background: linear-gradient(90deg, #23899C 13.04%, #2CA068 91.03%);
+  color: #fff;
+  border-radius: 7px;
+  font-weight: 700;
+  border: none !important;
+  font-size: 16px;
+  width: 100% !important;
+  height: 34px !important;
+
+}
+
+/* Navbar logo styles */
+.nav-logo {
+  width: 210px !important;
+  height: 34px !important;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -950px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+  padding-top: 50px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+#navbarDropdownSolutions,
+#navbarDropdownIndustries,
+#navbarDropdownTechnologies,
+#navbarDropdownPortfolio {
+  color: #676968;
   font-size: 16px;
   font-weight: 400;
   text-align: left;
-  
-  }
-  
-  #nav-a{
-    color: #676968 !important;
+
+}
+
+#nav-a {
+  color: #676968 !important;
   font-size: 16px !important;
   font-weight: 400 !important;
   text-align: left;
-  
+
+}
+
+#nav-sidebar-ul {
+  font-weight: 400;
+  gap: 10px !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-logo-sidebar {
+  width: 138px !important;
+  height: 22.35px !important;
+  margin-top: -50px !important;
+  margin-left: 20px !important;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .nav-logo {
+      width: 138px !important;
+      height: 22px !important;
   }
-  #nav-sidebar-ul{
-    font-weight: 400; 
-    gap: 10px !important; 
-    margin-left: 20px !important;
-    margin-right: 20px !important;
-  }
-  
-  .cancel-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  .nav-logo-sidebar{
-    width: 138px !important;
-    height: 22.35px !important;
-    margin-top: -50px !important;
-    margin-left: 20px !important;
-  }
+
+}
   /*======================*/
   
 
 /*section 1======================================================*/
 .Blockchain-Development-services-maindiv{
-    margin-top: 100px;
+    margin-top: 120px;
     width: 100%;
 }
 .Blockchain-Development-services-header-col1 h1{
@@ -185,6 +201,7 @@
 .Services-We-Offer-bgcolor{
      background-image: url('./Block-chain-Images/Rectangle 3463830.png');
      background-repeat: no-repeat;
+     
      margin-top: 100px;
     /* height: 324px !important; */
     /* position: relative !important;
@@ -267,7 +284,7 @@
     margin-top: 15px;
 }
 .Services-We-Offer-cards1{
-    margin-top: 20px;
+    margin-top: 40px;
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -329,11 +346,11 @@
         background: linear-gradient(90deg, #248B97 0%, #2CA068 100%);
         border-radius: 8px;
         border: none;
-        width: 170px;
-        height: 42px;
+        width: 165px;
+        height: 40px;
         top: 680px;
         left: 519px;
-        padding: 0px 21px 0px 21px;
+        padding: 0px 18px 0px 18px;
         gap: 0px;
         opacity: 0px;
         font-family: 'Source Sans Pro',sans-serif;
@@ -384,6 +401,7 @@
     font-weight: 600;
     line-height: 35.2px;
     text-align: center;
+    margin-top: 9px;
 }
 .Why-Choose-project-bg p{
     font-family: 'Source Sans Pro',sans-serif;
@@ -425,13 +443,13 @@
     }
     .Why-Choose-project-bg p{
         font-family: 'Source Sans Pro',sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
         line-height: 15.08px;
         text-align: center;
     }
     .Why-Choose-project-bg{
-        padding: 12px;
+        padding: 13px;
     }
     .Why-Choose-Us-header{
         font-size: 32px;
@@ -472,18 +490,18 @@
     background-color: #f1f1f1; 
   }
   .Technical-Expertise-subheading span{
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 1px dotted rgba(44, 160, 104, 1);
+    margin-left: 12px;
+    margin-right: 12px;
+    border: 1px dashed rgba(44, 160, 104, 1);
     width: 100%;
     height: 100%;
     gap: 0px;
     opacity: 0px;
   }
   .Technical-Expertise-subheading{
-    text-align: left;
+    text-align: center;
   }
-  .scrollable h1{
+  .scrollable h2{
     font-family: 'Source Sans Pro',sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -582,7 +600,7 @@
         /* padding-bottom: 8px; */
         margin-bottom: 8px;
         font-family: 'Source Sans Pro',sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 20.11px;
         text-align: left;
@@ -602,7 +620,7 @@
     }
     .Technical-Expertise-side-heading{
         font-family: 'Source Sans Pro',sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         line-height: 25.14px;
         text-align: left;
@@ -614,6 +632,7 @@
 /*section 5===============================================================================*/
 .background-section {
     background-color: #f8f9fa;
+    margin-top: 100px;
 }
 
 .Industry-accordion {
@@ -645,7 +664,6 @@
 } */
 
 
-
 .accordion-button {
     /* border-radius: none !; */
     /* background: none; */
@@ -655,7 +673,7 @@
     font-weight: 400;
     line-height: 25.14px;
     text-align: left;
-
+  
     /* border-bottom: 1px #EEEEEE solid;
     border-bottom-left-radius: 20px ;
     border-bottom-Right-radius: 20px ;
@@ -709,6 +727,9 @@
     padding: 10px;
 }
 @media screen and (max-width: 767px){
+  .background-section{
+    margin-top: 50px;
+  }
     .Industry-Served-heading{
         font-size: 32px;
         font-weight: 600;
@@ -727,6 +748,17 @@
     .accordion-maincol{
         margin-top: 40px;
     }
+    .accordion-body {
+      border-top: none;
+      font-family: 'Source Sans Pro',sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-top: -15px;
+      text-align: left;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+  }
     .Industry-accordion::after {
         content: "";
         position: absolute;
@@ -745,11 +777,12 @@
         line-height: 22.63px;
         text-align: left;
     }
-    .accordion-body{
+    .Industry-accordion-body p{
         font-size: 12px;
         font-weight: 400;
         line-height: 20px;
         text-align: left;
+        color: #217048 !important;
         padding-left: 35px !important;
         padding-right: 35px !important;
     }
@@ -965,6 +998,9 @@
       }
     .Engagement-Models-innercards{
       margin-top: 10px;
+      height: auto !important;
+      padding: 20px;
+      padding-bottom: 5px;
     }
     .Engagement-Models-heading{
         width: 100%;
@@ -1008,14 +1044,16 @@
         line-height: 15.08px;
         text-align: left;
         margin-top: 4px !important;
-    }
+        margin-bottom: 3;
+   }
     .Engagement-Models-button .btn-primary{
-        width: 145px;
+        width: 138px;
+        height: 35px;
         font-size: 17px;
         font-weight: 700;
         line-height: 25.14px;
         text-align: center;
-        padding: 10px;
+        padding: 5px;
         
     }
     
@@ -1177,6 +1215,7 @@
   .Emerging-Technologies-bgcolor{
     background: #23899C0D;
     height: 550px;
+    margin-top: 50px;
 }
   .Emerging-Technologies-header h2{
     font-size: 32px;
@@ -1400,7 +1439,7 @@
             line-height: 20.11px;
             text-align: center;
             display: block;
-            margin: 25px auto;
+            margin:35px auto !important;
         }   
         
         
@@ -1610,6 +1649,7 @@
   color: #706E72;
   margin-left: -20px;
   margin-top: 4px;
+
 }
 .News-blogs-inner-row p{
   font-family: 'Source Sans Pro',sans-serif;
@@ -1630,7 +1670,6 @@
   font-weight: 600;
   line-height: 25.14px;
   text-align: left;
-  
 }
 .News-blogs-content h5{
   font-family: 'Source Sans Pro',sans-serif;
@@ -1653,13 +1692,18 @@
 }
 .News-blogs-content{
   margin-top: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 15.5px;
+  padding-right: 16px;
   padding-bottom: 15px;
 }
 .News-blogs-cards{
   padding-left: 17px;
   padding-right: 17px;
+}
+.News-blogs-inner-row {
+  padding-left: 3px;
+  padding-right: 4px;
+  /* background-color: #217048 !important; */
 }
 @media only screen and (max-width: 767px) {
   .News-blogs-heading{
@@ -1710,8 +1754,8 @@
 }
 .News-blogs-cards{
   width: 95%;
-
 }
+
 }
 @media only screen and (min-width:301px) and (max-width:320px){
   .News-blogs-inner-row p{
@@ -2152,6 +2196,10 @@
       width: 100%;
       background-color: #2CA068;
     }
+
+    .form-paragraph{
+      font-size: 14px !important;
+    }
   
     .form-point {
       font-size: 14px !important;
@@ -2343,6 +2391,12 @@
       .footer-bottom-content {
         text-align: center;
       }
+      .footer-text1 a,
+  .footer-text1 a:hover{
+    color: #676968;
+    text-decoration: underline;
+    cursor: pointer;
+  }
       
       @media only screen and (max-width: 768px) {
         .copysymbol {
