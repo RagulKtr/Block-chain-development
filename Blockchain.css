@@ -139,6 +139,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 22.63px;
+    height: 42px;
     text-align: left;
     color: #FFFFFF;
     padding: 8px 14px 8px 14px;
@@ -167,6 +168,7 @@
         line-height: 20.11px;
         text-align: center;
         margin: 20px auto;
+        height: 36px;
         display: block;
         margin-bottom: 30px !important;
     }
@@ -347,7 +349,7 @@
         border-radius: 8px;
         border: none;
         width: 165px;
-        height: 40px;
+        height: 36px;
         top: 680px;
         left: 519px;
         padding: 0px 18px 0px 18px;
@@ -1048,7 +1050,7 @@
    }
     .Engagement-Models-button .btn-primary{
         width: 138px;
-        height: 35px;
+        height: 36px;
         font-size: 17px;
         font-weight: 700;
         line-height: 25.14px;
@@ -1381,7 +1383,7 @@
     opacity: 0px;
     }
     .dot-indicator.active {
-    background-color: green !important;
+    background-color: #2CA068 !important;
     width: 24px !important;
     height: 8px;
     gap: 0px;
@@ -1406,6 +1408,9 @@
         .Our-casestudies-heading img{
             width: 28px;
             height: 3px;
+        }
+        .Our-casestudies-indicator{
+          margin-bottom: -12px;
         }
         .Our-casestudies-Software-Solution h2{
             display: none;
@@ -1435,6 +1440,7 @@
             border-radius: 8px ;
             opacity: 0px;
             font-size: 16px;
+            height: 37px;
             font-weight: 700;
             line-height: 20.11px;
             text-align: center;
@@ -1524,7 +1530,7 @@
     opacity: 0px;
     }
     .dot-indicator.active {
-    background-color: green !important;
+    background-color: #2CA068 !important;
     width: 24px !important;
     height: 8px;
     gap: 0px;
@@ -1549,7 +1555,7 @@
     }
     .our-testimonial-background{
         background: #23899C0D;
-        margin-top: 100px;
+        margin-top: 80px;
         height: 440px;
     }
     .our-testimonial-maindiv{
