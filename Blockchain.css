@@ -1760,7 +1760,10 @@
   
 }
 .News-blogs-cards{
-  width: 100%;
+  width: 100%;  
+}
+.News-blogs-mainrow{
+  padding: 10px;
 }
 
 }
