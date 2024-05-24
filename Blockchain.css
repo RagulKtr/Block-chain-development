@@ -1539,6 +1539,7 @@
     }
     .our-testimonial-paragrapgh-mobile{
         display: none;
+        color: #676968;
     }
 
 @media screen and (max-width: 767px){
