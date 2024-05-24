@@ -1780,7 +1780,11 @@
   font-weight: 400;
   line-height: 20.11px;
   text-align: left;
-  margin-left: 30px;
+  /* margin-left: ; */
+  padding-left: 20px;
+  /* display: flex !important;
+  align-items: flex-end !important;
+  justify-content: end !important; */
   margin-top: 4px;
 }
 }
